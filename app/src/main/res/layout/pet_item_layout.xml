@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="pet"
+            type="com.example.petkeeper.model.Pet" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_rectangular_shape"
+        android:elevation="2dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_pet_picture"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_launcher_background"
+            android:contentDescription="@string/pet_image"
+            android:src="@drawable/gradient_imageview"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline2"
+            app:layout_constraintTop_toTopOf="parent"
+            bind:placeholder="@{@drawable/ic_launcher_background}"
+            bind:setPetImageFromUrl="@{pet.petImage}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="237dp" />
+
+        <TextView
+            android:id="@+id/tv_pet_name_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="37dp"
+            android:fontFamily="@font/nexabold"
+            android:text="@string/pet_name"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_pet_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/nexalight"
+            android:text="@{pet.petName}"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_pet_name_header"
+            app:layout_constraintStart_toEndOf="@id/tv_pet_name_header"
+            app:layout_constraintTop_toTopOf="@id/tv_pet_name_header" />
+
+
+        <TextView
+            android:id="@+id/tv_pet_species_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/nexabold"
+            android:text="@string/pet_species"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_pet_name_header" />
+
+        <TextView
+            android:id="@+id/tv_pet_species"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/nexalight"
+            android:text="@{pet.petSpecies}"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_pet_species_header"
+            app:layout_constraintStart_toEndOf="@id/tv_pet_species_header"
+            app:layout_constraintTop_toTopOf="@id/tv_pet_species_header" />
+
+        <TextView
+            android:id="@+id/tv_pet_age_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/nexabold"
+            android:text="@string/age"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_pet_species_header" />
+
+        <TextView
+            android:id="@+id/tv_pet_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/nexalight"
+            android:text="@{pet.petDateOfBirth}"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_pet_age_header"
+            app:layout_constraintStart_toEndOf="@id/tv_pet_age_header"
+            app:layout_constraintTop_toTopOf="@id/tv_pet_age_header" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

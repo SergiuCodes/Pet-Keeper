@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pet Keeper</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pet_image">pet image</string>
+    <string name="pet_name">NAME:</string>
+    <string name="pet_species">SPECIES:</string>
+    <string name="age">AGE:</string>
+    <string name="sometext">Sometext</string>
+</resources>
