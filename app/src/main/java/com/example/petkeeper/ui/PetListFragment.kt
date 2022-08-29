@@ -43,8 +43,10 @@ class PetListFragment() : Fragment() {
                     }
                 }).show()
         }
+        petsViewModel.insertPet(Pet("Test","Test","test",1))
         petsViewModel.getAllPets()
         Log.d("PetFrag","Viewmodel list " + petsViewModel.petsList.toString())
+
 //        petsViewModel.getAllPets()?.observe(viewLifecycleOwner, Observer {
 //            PetsRvAdapter(requireContext()).petsList = it
 //        })

@@ -1,6 +1,5 @@
 package com.example.petkeeper.data.repository
 
-import androidx.lifecycle.LiveData
 import com.example.petkeeper.data.database.room.PetDAO
 import com.example.petkeeper.data.database.room.entity.Pet
 
