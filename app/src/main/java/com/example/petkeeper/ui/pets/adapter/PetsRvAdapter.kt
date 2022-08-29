@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petkeeper.R
-import com.example.petkeeper.model.Pet
+import com.example.petkeeper.data.database.room.entity.Pet
 
 class PetsRvAdapter(val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 

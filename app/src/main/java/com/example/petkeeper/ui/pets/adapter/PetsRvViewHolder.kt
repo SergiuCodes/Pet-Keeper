@@ -4,7 +4,7 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petkeeper.databinding.PetItemLayoutBinding
-import com.example.petkeeper.model.Pet
+import com.example.petkeeper.data.database.room.entity.Pet
 
 class PetsRvViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
@@ -15,6 +15,5 @@ class PetsRvViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
             binding.pet = pet
             binding.executePendingBindings()
         }
-
     }
 }

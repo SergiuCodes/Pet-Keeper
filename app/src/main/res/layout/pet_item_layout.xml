@@ -7,7 +7,7 @@
 
         <variable
             name="pet"
-            type="com.example.petkeeper.model.Pet" />
+            type="com.example.petkeeper.data.database.room.entity.Pet" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,9 +28,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/guideline2"
-            app:layout_constraintTop_toTopOf="parent"
-            bind:placeholder="@{@drawable/ic_launcher_background}"
-            bind:setPetImageFromUrl="@{pet.petImage}"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
