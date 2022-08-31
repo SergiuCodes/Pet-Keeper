@@ -1,17 +1,18 @@
 package com.example.petkeeper.data.repository
 
 import com.example.petkeeper.data.database.room.PetDAO
+import com.example.petkeeper.data.database.room.PetRoomDatabase
 import com.example.petkeeper.data.database.room.entity.Pet
 
-class PetsRepository(private val petDAO: PetDAO?) {
+class PetsRepository(private val db: PetRoomDatabase) {
 
-   fun getAllPets() = petDAO?.getAllPets()
+   fun getAllPets() = db.petDao().getAllPets()
 
     suspend fun insertPet(pet: Pet) {
-        petDAO?.insertPet(pet)
+        db.petDao().insertPet(pet)
     }
 
     suspend fun deletePet(){
-        petDAO?.deletePet()
+        db.petDao().deletePet()
     }
 }

@@ -12,23 +12,21 @@ abstract class PetRoomDatabase : RoomDatabase() {
     abstract fun petDao(): PetDAO
 
     companion object {
-        private var INSTANCE: PetRoomDatabase? = null
+        @Volatile
+        private var instance: PetRoomDatabase? = null
+        private val LOCK = Any()
 
-        fun getDatabaseInstance(context: Context): PetRoomDatabase? {
-            synchronized(this) {
-                var instance = INSTANCE
-                if (instance != null) {
-                    instance = Room.databaseBuilder(
-                        context.applicationContext,
-                        PetRoomDatabase::class.java,
-                        "petsDatabase"
-                    )
-                        .allowMainThreadQueries()
-                        .build()
-                    INSTANCE = instance
-                }
-                return instance
-            }
+        operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
+            instance ?: getDatabaseInstance(context).also { instance = it }
         }
+
+        private fun getDatabaseInstance(context: Context) =
+            Room.databaseBuilder(
+                context.applicationContext,
+                PetRoomDatabase::class.java,
+                "petsDatabase"
+            )
+                .allowMainThreadQueries()
+                .build()
     }
 }
