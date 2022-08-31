@@ -9,9 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.petkeeper.R
 import com.example.petkeeper.data.database.room.entity.Pet
 
-class PetsRvAdapter(val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class PetsRvAdapter(val context: Context, var petsList: List<Pet> = ArrayList()) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    var petsList: List<Pet> = ArrayList()
     private lateinit var mRowBinding: ViewDataBinding
 
     fun submitPetsList(nList: List<Pet>){
@@ -30,8 +29,8 @@ class PetsRvAdapter(val context: Context) : RecyclerView.Adapter<RecyclerView.Vi
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val petItem = petsList[position]
-        (holder as PetsRvViewHolder).bind(petItem)
+        val pet = petsList[position]
+        (holder as PetsRvViewHolder).bind(pet)
     }
 
     override fun getItemCount(): Int {

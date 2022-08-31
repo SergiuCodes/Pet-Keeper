@@ -16,5 +16,5 @@ data class Pet(
 //    @ColumnInfo(name = "petImage")
 //    val petImage: String,
     @PrimaryKey(autoGenerate = true)
-    val id: Int? = 0
+    var id: Int? = null
 )

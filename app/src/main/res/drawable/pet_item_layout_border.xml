@@ -1,14 +1,22 @@
-<rotate xmlns:android="http://schemas.android.com/apk/res/android"
-    android:fromDegrees="90"
-    android:toDegrees="90">
+<?xml version="1.0" encoding="utf-8"?>
 
-    <shape
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-        android:shape="line">
-        <stroke
-            android:width="6dp"
-            android:color="@color/app_orange"
-            android:dashGap="2dp"/>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/app_yellow" />
+        </shape>
+    </item>
 
-    </shape>
-</rotate>
+    <item android:left="6dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/rectangular_shape_color" />
+            <corners
+                android:bottomLeftRadius="3dp"
+                android:bottomRightRadius="3dp"
+                android:topLeftRadius="3dp"
+                android:topRightRadius="3dp" />
+        </shape>
+    </item>
+
+</layer-list>

@@ -12,7 +12,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="130dp"
         android:layout_margin="10dp"
         android:background="@drawable/rounded_rectangular_shape"
         android:elevation="2dp"
@@ -22,7 +22,7 @@
             android:id="@+id/iv_pet_picture"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@drawable/ic_launcher_background"
+            android:background="@drawable/pet_examplepic"
             android:contentDescription="@string/pet_image"
             android:src="@drawable/gradient_imageview"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -35,14 +35,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="237dp" />
+            app:layout_constraintGuide_begin="222dp" />
 
         <TextView
             android:id="@+id/tv_pet_name_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="37dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/nexabold"
             android:text="@string/pet_name"
             android:textColor="@color/black"

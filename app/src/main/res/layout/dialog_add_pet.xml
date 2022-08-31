@@ -8,7 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/app_darker_yellow">
 
         <EditText
             android:id="@+id/et_pet_name"
@@ -16,9 +17,14 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:ems="10"
+            android:fontFamily="@font/nexalight"
             android:gravity="center"
             android:hint="@string/pet_name_hint"
-            android:inputType="textPersonName"
+            android:inputType="textVisiblePassword"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@color/app_red"
+            android:textSize="16sp"
+            app:backgroundTint="@color/app_red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -29,9 +35,14 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:ems="10"
+            android:fontFamily="@font/nexalight"
             android:gravity="center"
             android:hint="@string/pet_species_hint"
-            android:inputType="textPersonName"
+            android:inputType="textVisiblePassword"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@color/app_red"
+            android:textSize="16sp"
+            app:backgroundTint="@color/app_red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/et_pet_name" />
@@ -42,9 +53,14 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:ems="10"
+            android:fontFamily="@font/nexalight"
             android:gravity="center"
             android:hint="@string/pet_date_of_birth_hint"
             android:inputType="date"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@color/app_red"
+            android:textSize="16sp"
+            app:backgroundTint="@color/app_red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/et_pet_species" />
@@ -61,27 +77,27 @@
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/btn_launch_camera"
                 android:layout_width="70dp"
-                android:clickable="true"
-                android:src="@drawable/launch_cam_icon"
                 android:layout_height="40dp"
-                android:focusable="true" />
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/launch_cam_icon" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/btn_open_gallery"
                 android:layout_width="60dp"
-                android:clickable="true"
-                android:src="@drawable/launch_gallery_icon"
-                android:layout_toEndOf="@id/btn_launch_camera"
                 android:layout_height="40dp"
-                android:focusable="true" />
+                android:layout_toEndOf="@id/btn_launch_camera"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/launch_gallery_icon" />
 
         </RelativeLayout>
 
 
         <RelativeLayout
-            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

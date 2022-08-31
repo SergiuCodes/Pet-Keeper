@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 
 class PetsViewModel(val petsRepository: PetsRepository) : ViewModel() {
 
-    val petsList: LiveData<List<Pet>>? = getAllPets()
+    val petsList: LiveData<MutableList<Pet>>? = getAllPets()
 
     fun insertPet(pet: Pet) = viewModelScope.launch(Dispatchers.IO) {
         petsRepository.insertPet(pet)
@@ -19,4 +19,5 @@ class PetsViewModel(val petsRepository: PetsRepository) : ViewModel() {
     }
 
     fun getAllPets() = petsRepository.getAllPets()
+
 }

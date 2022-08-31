@@ -2,6 +2,7 @@ package com.example.petkeeper.ui
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDialog
@@ -11,30 +12,37 @@ import com.example.petkeeper.data.database.room.entity.Pet
 import com.example.petkeeper.databinding.DialogAddPetBinding
 import com.example.petkeeper.tools.AddDialogListener
 
-class AddPetDialog(context: Context, var addDialogListener: AddDialogListener) : AppCompatDialog(context) {
+class AddPetDialog(context: Context, var addDialogListener: AddDialogListener) :
+    AppCompatDialog(context) {
 
-    private lateinit var binding:DialogAddPetBinding
+    private lateinit var binding: DialogAddPetBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.dialog_add_pet, null, false)
+        binding = DataBindingUtil.inflate(
+            LayoutInflater.from(context),
+            R.layout.dialog_add_pet,
+            null,
+            false
+        )
         setContentView(binding.root)
 
-        binding.btnSave.setOnClickListener{
+        binding.btnSave.setOnClickListener {
             val petName = binding.etPetName.text.toString()
             val petSpecies = binding.etPetSpecies.text.toString()
             val petDateOfBirth = binding.etPetDob.text.toString()
 
-            if(petName.isEmpty() || petSpecies.isEmpty() || petDateOfBirth.isEmpty()){
-                Toast.makeText(context, "Please enter all the required info!", Toast.LENGTH_SHORT).show()
+            if (petName.isEmpty() || petSpecies.isEmpty() || petDateOfBirth.isEmpty()) {
+                Toast.makeText(context, "All fields are required!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             val pet = Pet(petName, petSpecies, petDateOfBirth)
             addDialogListener.onAddButtonClicked(pet)
             dismiss()
+            Log.d("AddDialog","Clicked save " + pet.toString())
         }
-        binding.btnCancel.setOnClickListener{
+        binding.btnCancel.setOnClickListener {
             cancel()
         }
     }

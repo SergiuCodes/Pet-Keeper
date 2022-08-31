@@ -1,6 +1,5 @@
 package com.example.petkeeper.data.repository
 
-import com.example.petkeeper.data.database.room.PetDAO
 import com.example.petkeeper.data.database.room.PetRoomDatabase
 import com.example.petkeeper.data.database.room.entity.Pet
 

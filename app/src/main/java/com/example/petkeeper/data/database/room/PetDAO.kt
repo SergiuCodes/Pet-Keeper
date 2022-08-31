@@ -1,6 +1,7 @@
 package com.example.petkeeper.data.database.room
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -17,5 +18,5 @@ interface PetDAO {
     suspend fun deletePet()
 
     @Query("SELECT * FROM pets_table ORDER BY id")
-    fun getAllPets(): LiveData<List<Pet>>?
+    fun getAllPets(): LiveData<MutableList<Pet>>?
 }

@@ -28,12 +28,12 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/pets_recyclerview"
+                android:layout_marginBottom="60dp"
+                android:layout_height="wrap_content"
                 bind:setPetsList="@{viewModelFromLayout.petsList}"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_width="match_parent"/>
 
         </LinearLayout>
-
 
 
     </FrameLayout>
