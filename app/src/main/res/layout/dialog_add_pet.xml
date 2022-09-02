@@ -6,118 +6,162 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/app_darker_yellow">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/app_gray"
+        android:elevation="154dp"
+        app:cardCornerRadius="4dp">
 
-        <EditText
-            android:id="@+id/et_pet_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:ems="10"
-            android:fontFamily="@font/nexalight"
-            android:gravity="center"
-            android:hint="@string/pet_name_hint"
-            android:inputType="textVisiblePassword"
-            android:textColor="@color/black"
-            android:textCursorDrawable="@color/app_red"
-            android:textSize="16sp"
-            app:backgroundTint="@color/app_red"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/et_pet_species"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:ems="10"
-            android:fontFamily="@font/nexalight"
-            android:gravity="center"
-            android:hint="@string/pet_species_hint"
-            android:inputType="textVisiblePassword"
-            android:textColor="@color/black"
-            android:textCursorDrawable="@color/app_red"
-            android:textSize="16sp"
-            app:backgroundTint="@color/app_red"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_pet_name" />
-
-        <EditText
-            android:id="@+id/et_pet_dob"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:ems="10"
-            android:fontFamily="@font/nexalight"
-            android:gravity="center"
-            android:hint="@string/pet_date_of_birth_hint"
-            android:inputType="date"
-            android:textColor="@color/black"
-            android:textCursorDrawable="@color/app_red"
-            android:textSize="16sp"
-            app:backgroundTint="@color/app_red"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_pet_species" />
-
-        <RelativeLayout
-            android:id="@+id/image_buttons_layout"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_pet_dob">
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/btn_launch_camera"
-                android:layout_width="70dp"
-                android:layout_height="40dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/launch_cam_icon" />
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/btn_open_gallery"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_toEndOf="@id/btn_launch_camera"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/launch_gallery_icon" />
-
-        </RelativeLayout>
+            android:layout_height="match_parent"
+            android:padding="10dp">
 
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_buttons_layout">
+            <EditText
+                android:id="@+id/et_pet_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:fontFamily="@font/nexalight"
+                android:gravity="left"
+                android:hint="@string/pet_name_hint"
+                android:inputType="textVisiblePassword"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@color/app_red"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:backgroundTint="@color/app_dark_green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_save"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:text="@string/save_button" />
+            <EditText
+                android:id="@+id/et_pet_species"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:fontFamily="@font/nexalight"
+                android:gravity="start"
+                android:hint="@string/pet_species_hint"
+                android:inputType="textVisiblePassword"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@color/app_red"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:backgroundTint="@color/app_dark_green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_pet_name" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_cancel"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_toEndOf="@id/btn_save"
-                android:text="@string/btn_cancel" />
+            <RelativeLayout
+                android:id="@+id/date_buttons_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_pet_species">
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_dob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/nexalight"
+                    android:text="@string/DOB_text"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/btn_datepicker"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/tv_dob"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/calendar_icon" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/image_buttons_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="@id/date_buttons_layout"
+                app:layout_constraintTop_toBottomOf="@id/date_buttons_layout">
+
+                <TextView
+                    android:id="@+id/image_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nexalight"
+                    android:text="@string/image_buttons_header"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/btn_launch_camera"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_toEndOf="@id/image_header"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/camera_icon" />
+
+                <ImageView
+                    android:id="@+id/btn_open_gallery"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toEndOf="@id/btn_launch_camera"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/gallery_icon" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_buttons_layout">
+
+                <ImageView
+                    android:id="@+id/btn_save"
+                    android:scaleType="fitXY"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/save_icon"
+                    android:text="@string/save_button" />
+
+                <ImageView
+                    android:id="@+id/btn_cancel"
+                    android:focusable="true"
+                    android:layout_marginStart="20dp"
+                    android:clickable="true"
+                    android:src="@drawable/cancel_icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toEndOf="@id/btn_save"
+                    android:text="@string/btn_cancel" />
+
+            </RelativeLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

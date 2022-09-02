@@ -15,4 +15,7 @@
     <string name="pet_date_of_birth_hint">Pet date of birth</string>
     <string name="save_button">SAVE</string>
     <string name="btn_cancel">Cancel</string>
+    <string name="datepicker">DatePicker</string>
+    <string name="DOB_text">Choose date</string>
+    <string name="image_buttons_header">Picture</string>
 </resources>

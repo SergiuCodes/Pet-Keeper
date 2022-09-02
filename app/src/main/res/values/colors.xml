@@ -11,6 +11,7 @@
     <color name="app_dark_green">#3A403F</color>
     <color name="app_yellow">#D9D16A</color>
     <color name="app_darker_yellow">#D9C66A</color>
+    <color name="app_gray">#F0F4F4</color>
     <color name="app_orange">#D9A76A</color>
     <color name="app_red">#D93636</color>
 </resources>
