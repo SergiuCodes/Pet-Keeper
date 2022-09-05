@@ -2,6 +2,6 @@ package com.example.petkeeper.tools
 
 import com.example.petkeeper.data.database.room.entity.Pet
 
-interface AddDialogListener {
+interface AddFragmentListener {
     fun onAddButtonClicked(pet: Pet)
 }
