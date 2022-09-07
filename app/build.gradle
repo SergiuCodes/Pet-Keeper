@@ -42,7 +42,7 @@ dependencies {
 
     //ROOM
     implementation("androidx.room:room-runtime:2.4.3")
-    implementation 'com.google.firebase:firebase-database-ktx:20.0.5'
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.6'
     kapt "androidx.room:room-compiler:2.4.3"
     implementation "androidx.room:room-ktx:2.4.3"
     // ViewModel

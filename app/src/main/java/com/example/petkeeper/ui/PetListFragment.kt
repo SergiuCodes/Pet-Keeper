@@ -40,6 +40,7 @@ class PetListFragment : Fragment() {
         val repository = PetsRepository(database)
         val factory = PetViewModelFactory(repository)
 
+
         petsViewModel = ViewModelProvider(this, factory)[PetsViewModel::class.java]
 
         with(mBinding) {
@@ -55,16 +56,18 @@ class PetListFragment : Fragment() {
 
         //Adding a new pet into the list
         mBinding.btnAddPet.setOnClickListener {
-            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.container, AddPetFragment(object : AddFragmentListener {
-                override fun onAddButtonClicked(pet: Pet) {
-                    Log.d("PetListFragment", "After clicked save $pet")
-                    petsViewModel.insertPet(pet)
-                }
-            })).addToBackStack("PetListFrag").commit()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.container, AddPetFragment(object : AddFragmentListener {
+                    override fun onAddButtonClicked(pet: Pet) {
+                        Log.d("PetListFragment", "After clicked save $pet")
+                        petsViewModel.insertPet(pet)
+                    }
+                })).addToBackStack("PetListFrag").commit()
         }
 
         petsViewModel.getAllPets()
         return mBinding.root
+
     }
 }
 

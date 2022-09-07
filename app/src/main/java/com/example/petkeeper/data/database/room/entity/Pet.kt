@@ -14,7 +14,7 @@ data class Pet(
     @ColumnInfo(name = "petDateOfBirth")
     val petDateOfBirth: String,
 //    @ColumnInfo(name = "petImage")
-//    val petImage: String,
+//    var petImage: String,
     @PrimaryKey(autoGenerate = true)
     var id: Int? = null
 )

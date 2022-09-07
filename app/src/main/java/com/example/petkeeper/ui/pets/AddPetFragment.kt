@@ -1,5 +1,6 @@
 package com.example.petkeeper.ui.pets
 
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.graphics.Bitmap
@@ -16,7 +17,6 @@ import com.example.petkeeper.R
 import com.example.petkeeper.data.database.room.entity.Pet
 import com.example.petkeeper.databinding.FragmentAddPetBinding
 import com.example.petkeeper.tools.AddFragmentListener
-import com.example.petkeeper.ui.PetListFragment
 import java.io.ByteArrayOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
@@ -26,7 +26,6 @@ private const val REQUEST_CODE = 46
 class AddPetFragment(private var addFragmentListener: AddFragmentListener) : Fragment() {
 
     private lateinit var binding: FragmentAddPetBinding
-    private val petListFragment = PetListFragment()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,21 +35,20 @@ class AddPetFragment(private var addFragmentListener: AddFragmentListener) : Fra
         val calendar = Calendar.getInstance()
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_pet, container, false)
 
-        with(binding){
+        with(binding) {
             lifecycleOwner = this@AddPetFragment
             executePendingBindings()
         }
 
         //Save button action
         binding.btnSave.setOnClickListener {
-
-            val fragmentManager = requireActivity().supportFragmentManager
             val petName = binding.etPetName.text.toString()
             val petSpecies = binding.etPetSpecies.text.toString()
             val petDateOfBirth = binding.tvDob.text.toString()
 
             if (petName.isEmpty() || petSpecies.isEmpty() || petDateOfBirth.isEmpty()) {
-                Toast.makeText(requireContext(), "All fields are required!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "All fields are required!", Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
             val pet = Pet(petName, petSpecies, petDateOfBirth)
@@ -81,12 +79,14 @@ class AddPetFragment(private var addFragmentListener: AddFragmentListener) : Fra
         //Open camera for image capture
         binding.btnLaunchCamera.setOnClickListener {
             val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            if (intent.resolveActivity(requireContext().packageManager) != null) {
+            val photo =  
+            if (intent.resolveActivity(requireActivity().packageManager) != null) {
                 startActivityForResult(intent, REQUEST_CODE)
-            } else{
-                Toast.makeText(context,"Unable to open camera!", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context, "Unable to open camera!", Toast.LENGTH_SHORT).show()
             }
         }
+
         //Cancel button within the fragment
         binding.btnCancel.setOnClickListener {
             navigateToBackStack()
@@ -102,6 +102,18 @@ class AddPetFragment(private var addFragmentListener: AddFragmentListener) : Fra
         return binding.root
     }
 
+    //Image result after taken picture with camera
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            val takenImage: Bitmap? = data?.getParcelableExtra<Bitmap>("data")
+            binding.petImage.setImageBitmap(takenImage)
+            binding.petImage.visibility = View.VISIBLE
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
+    }
+
+    //Method to back action to previous fragment
     private fun navigateToBackStack() {
         requireActivity().supportFragmentManager
             .beginTransaction()
