@@ -2,6 +2,8 @@
     <string name="app_name">Pet Keeper</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="settings_fragment">YOU ARE NOW IN THE SETTINGS TAB</string>
+    <string name="account_fragment">YOU ARE NOW IN THE ACCOUNT TAB</string>
     <string name="pet_image">pet image</string>
     <string name="pet_name">NAME:</string>
     <string name="pet_species">SPECIES:</string>
@@ -9,7 +11,7 @@
     <string name="sometext">Sometext</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_dashboard">Dashboard</string>
-    <string name="menu_info">Info</string>
+    <string name="menu_account">Account</string>
     <string name="pet_name_hint">Pet Name</string>
     <string name="pet_species_hint">Pet Species</string>
     <string name="pet_date_of_birth_hint">Pet date of birth</string>

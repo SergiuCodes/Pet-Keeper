@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/menu_fragment">
+
+    <fragment
+        android:id="@+id/menu_fragment"
+        android:name="com.example.petkeeper.ui.fragments.PetListFragment"
+        android:label="menu_dashboard_fragment"
+        tools:layout="@layout/pet_list_fragment_layout"/>
+
+    <fragment
+        android:id="@+id/settings_fragment"
+        android:name="com.example.petkeeper.ui.fragments.SettingsFragment"
+        android:label="menu_settings_fragment"
+        tools:layout="@layout/fragment_settings"/>
+
+    <fragment
+        android:id="@+id/account_fragment"
+        android:name="com.example.petkeeper.ui.fragments.AccountFragment"
+        android:label="menu_account_fragment"
+        tools:layout="@layout/fragment_account_layout"/>
+
+
+</navigation>

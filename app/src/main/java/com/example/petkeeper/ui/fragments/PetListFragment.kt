@@ -1,4 +1,4 @@
-package com.example.petkeeper.ui
+package com.example.petkeeper.ui.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -14,7 +14,6 @@ import com.example.petkeeper.data.database.room.entity.Pet
 import com.example.petkeeper.data.repository.PetsRepository
 import com.example.petkeeper.databinding.PetListFragmentLayoutBinding
 import com.example.petkeeper.tools.AddFragmentListener
-import com.example.petkeeper.ui.pets.AddPetFragment
 import com.example.petkeeper.ui.pets.adapter.PetsRvAdapter
 import com.example.petkeeper.viewmodel.PetViewModelFactory
 import com.example.petkeeper.viewmodel.PetsViewModel

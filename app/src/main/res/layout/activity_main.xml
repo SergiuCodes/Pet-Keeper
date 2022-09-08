@@ -16,18 +16,21 @@
             android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/app_dark_green" />
+            android:background="@color/app_dark_green">
+
+
+        </FrameLayout>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/app_darker_yellow"
             app:labelVisibilityMode="unlabeled"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:menu="@menu/main_menu"
-            android:id="@+id/navigation_bar"
-            android:background="@color/app_darker_yellow"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/main_menu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

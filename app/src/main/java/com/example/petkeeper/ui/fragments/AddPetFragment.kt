@@ -1,4 +1,4 @@
-package com.example.petkeeper.ui.pets
+package com.example.petkeeper.ui.fragments
 
 import android.app.Activity
 import android.app.DatePickerDialog
