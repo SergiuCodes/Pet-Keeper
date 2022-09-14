@@ -60,6 +60,7 @@ class AddPetFragment(private var addFragmentListener: AddFragmentListener) : Fra
         binding.btnDatepicker.setOnClickListener {
             val dateSetListener =
                 DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
+
                     calendar.set(Calendar.YEAR, year)
                     calendar.set(Calendar.MONTH, monthOfYear)
                     calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
@@ -68,6 +69,7 @@ class AddPetFragment(private var addFragmentListener: AddFragmentListener) : Fra
                     val sdf = SimpleDateFormat(myFormat, Locale.UK)
                     binding.tvDob.text = sdf.format(calendar.time)
                 }
+
             DatePickerDialog(
                 requireContext(),
                 dateSetListener,
@@ -79,7 +81,6 @@ class AddPetFragment(private var addFragmentListener: AddFragmentListener) : Fra
         //Open camera for image capture
         binding.btnLaunchCamera.setOnClickListener {
             val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            val photo =  
             if (intent.resolveActivity(requireActivity().packageManager) != null) {
                 startActivityForResult(intent, REQUEST_CODE)
             } else {
@@ -90,14 +91,6 @@ class AddPetFragment(private var addFragmentListener: AddFragmentListener) : Fra
         //Cancel button within the fragment
         binding.btnCancel.setOnClickListener {
             navigateToBackStack()
-        }
-
-        //Method to transform bitmap to String
-        fun encodeImage(bm: Bitmap): String? {
-            val baos = ByteArrayOutputStream()
-            bm.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-            val b = baos.toByteArray()
-            return Base64.encodeToString(b, Base64.DEFAULT)
         }
         return binding.root
     }

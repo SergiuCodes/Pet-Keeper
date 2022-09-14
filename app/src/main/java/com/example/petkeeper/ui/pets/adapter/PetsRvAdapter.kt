@@ -9,11 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.petkeeper.R
 import com.example.petkeeper.data.database.room.entity.Pet
 
-class PetsRvAdapter(private val context: Context, var petsList: List<Pet> = ArrayList()) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class PetsRvAdapter(private val context: Context, var petsList: List<Pet> = ArrayList()) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private lateinit var mRowBinding: ViewDataBinding
 
-    fun submitPetsList(nList: List<Pet>){
+    fun submitPetsList(nList: List<Pet>) {
         petsList = nList
         notifyDataSetChanged()
     }

@@ -66,7 +66,6 @@ class PetListFragment : Fragment() {
 
         petsViewModel.getAllPets()
         return mBinding.root
-
     }
 }
 
