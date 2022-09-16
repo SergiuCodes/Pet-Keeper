@@ -29,8 +29,7 @@
     <string name="save_text">Save</string>
     <string name="notification_fragment_type_title">Notifications type</string>
     <string name="cancel_text">Cancel</string>
-    <string name="notification_title">NOTIFICATION TITLE</string>
-    <string name="notification_message">NOTIFICATION MESSAGE</string>
+    <string name="notification_title_hint">NOTIFICATION TITLE</string>
     <string name="choose_notification_date">Pick notification date:</string>
     <string name="choose_notification_time">Pick notification time:</string>
 </resources>

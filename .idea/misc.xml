@@ -10,6 +10,7 @@
         <entry key="..\:/Users/eNeru/AndroidStudioProjects/Pet-Keeper/app/src/main/res/drawable/menu_account_icon.xml" value="0.137" />
         <entry key="..\:/Users/eNeru/AndroidStudioProjects/Pet-Keeper/app/src/main/res/drawable/menu_item_dashboard.xml" value="0.2055" />
         <entry key="..\:/Users/eNeru/AndroidStudioProjects/Pet-Keeper/app/src/main/res/drawable/menu_item_settings.xml" value="0.2055" />
+        <entry key="..\:/Users/eNeru/AndroidStudioProjects/Pet-Keeper/app/src/main/res/drawable/pet_icon_delete.xml" value="0.1985" />
         <entry key="..\:/Users/eNeru/AndroidStudioProjects/Pet-Keeper/app/src/main/res/drawable/pet_item_layout_border.xml" value="0.33" />
         <entry key="..\:/Users/eNeru/AndroidStudioProjects/Pet-Keeper/app/src/main/res/drawable/pet_item_manage_notifications.xml" value="0.137" />
         <entry key="..\:/Users/eNeru/AndroidStudioProjects/Pet-Keeper/app/src/main/res/drawable/pet_notification_icon_off.xml" value="0.137" />
@@ -28,7 +29,7 @@
         <entry key="..\:/Users/eNeru/AndroidStudioProjects/Pet-Keeper/app/src/main/res/layout/fragment_medicine_notification_layout.xml" value="0.353125" />
         <entry key="..\:/Users/eNeru/AndroidStudioProjects/Pet-Keeper/app/src/main/res/layout/fragment_settings.xml" value="0.3671875" />
         <entry key="..\:/Users/eNeru/AndroidStudioProjects/Pet-Keeper/app/src/main/res/layout/fragment_vaccine_notification_layout.xml" value="0.3671875" />
-        <entry key="..\:/Users/eNeru/AndroidStudioProjects/Pet-Keeper/app/src/main/res/layout/pet_item_layout.xml" value="0.25968109339407747" />
+        <entry key="..\:/Users/eNeru/AndroidStudioProjects/Pet-Keeper/app/src/main/res/layout/pet_item_layout.xml" value="0.5" />
         <entry key="..\:/Users/eNeru/AndroidStudioProjects/Pet-Keeper/app/src/main/res/layout/pet_list_fragment_layout.xml" value="0.33" />
         <entry key="..\:/Users/eNeru/AndroidStudioProjects/Pet-Keeper/app/src/main/res/menu/main_menu.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/eNeru/AndroidStudioProjects/Pet-Keeper/app/src/main/res/xml/provider_paths.xml" value="0.18854166666666666" />

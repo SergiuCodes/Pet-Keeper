@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -9,31 +9,32 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:id="@+id/container"
         android:layout_height="match_parent"
         android:background="@color/app_gray"
         tools:context=".ui.fragments.notifications.MealNotificationFragment">
 
         <LinearLayout
+            android:id="@+id/textfields_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textfields_layout"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
-                app:boxStrokeColor="@color/app_red"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:paddingHorizontal="20dp">
+                android:paddingHorizontal="20dp"
+                app:boxStrokeColor="@color/app_red">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_notification_title"
+                    android:id="@+id/et_pet_name"
                     android:layout_width="match_parent"
-                    android:fontFamily="@font/nexalight"
                     android:layout_height="wrap_content"
-                    android:hint="@string/notification_title" />
+                    android:fontFamily="@font/nexalight"
+                    android:hint="@string/pet_name_hint" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
@@ -42,11 +43,11 @@
                     android:layout_marginTop="20dp">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_notification_message"
+                        android:id="@+id/et_notification_title"
                         android:layout_width="match_parent"
-                        android:fontFamily="@font/nexalight"
                         android:layout_height="wrap_content"
-                        android:hint="@string/notification_message" />
+                        android:fontFamily="@font/nexalight"
+                        android:hint="@string/notification_title_hint" />
 
                 </com.google.android.material.textfield.TextInputLayout>
             </com.google.android.material.textfield.TextInputLayout>
@@ -55,18 +56,18 @@
 
         <RelativeLayout
             android:id="@+id/date_buttons_layout"
-            app:layout_constraintTop_toBottomOf="@id/textfields_layout"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="5dp">
+            app:layout_constraintEnd_toEndOf="@+id/textfields_layout"
+            app:layout_constraintStart_toStartOf="@+id/textfields_layout"
+            app:layout_constraintTop_toBottomOf="@id/textfields_layout">
 
             <TextView
                 android:id="@+id/tv_header_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="25dp"
                 android:layout_marginTop="17dp"
                 android:fontFamily="@font/nexalight"
                 android:text="@string/choose_notification_date"
@@ -86,50 +87,19 @@
                 android:src="@drawable/calendar_icon" />
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/time_buttons_layout"
-            app:layout_constraintTop_toBottomOf="@id/date_buttons_layout"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="5dp">
-
-            <TextView
-                android:id="@+id/tv_header_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="17dp"
-                android:fontFamily="@font/nexalight"
-                android:text="@string/choose_notification_time"
-                android:textAllCaps="true"
-                android:textSize="16sp" />
-
-            <ImageView
-                android:id="@+id/btn_timepicker"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="10dp"
-                android:layout_toEndOf="@id/tv_header_time"
-                android:clickable="true"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/icon_clock" />
-        </RelativeLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnScheduleNotification"
             android:layout_width="match_parent"
-            android:backgroundTint="@color/app_dark_green"
             android:layout_height="50dp"
             android:layout_margin="20dp"
+            android:backgroundTint="@color/app_dark_green"
+            android:fontFamily="@font/nexalight"
             android:text="Schedule notification"
             android:textColor="@color/app_yellow"
-            android:fontFamily="@font/nexalight"
-            app:layout_constraintEnd_toEndOf="@+id/time_buttons_layout"
-            app:layout_constraintStart_toStartOf="@+id/time_buttons_layout"
-            app:layout_constraintTop_toBottomOf="@+id/time_buttons_layout" />
+            app:layout_constraintEnd_toEndOf="@+id/date_buttons_layout"
+            app:layout_constraintStart_toStartOf="@+id/date_buttons_layout"
+            app:layout_constraintTop_toBottomOf="@+id/date_buttons_layout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -38,8 +38,8 @@
 
         <ImageView
             android:id="@+id/btn_bell_notifcations"
-            android:layout_width="17dp"
-            android:layout_height="17dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:clickable="true"
             android:focusable="true"
             android:scaleType="fitXY"
@@ -50,8 +50,8 @@
 
         <ImageView
             android:id="@+id/btn_manage_notifications"
-            android:layout_width="21dp"
-            android:layout_height="21dp"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
             android:layout_marginStart="10dp"
             android:clickable="true"
             android:focusable="true"
@@ -59,6 +59,19 @@
             android:src="@drawable/pet_item_manage_notifications"
             app:layout_constraintBottom_toBottomOf="@id/btn_bell_notifcations"
             app:layout_constraintStart_toEndOf="@id/btn_bell_notifcations"
+            app:layout_constraintTop_toTopOf="@id/btn_bell_notifcations" />
+
+        <ImageView
+            android:id="@+id/btn_delete_pet"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/pet_icon_delete"
+            app:layout_constraintBottom_toBottomOf="@id/btn_bell_notifcations"
+            app:layout_constraintStart_toEndOf="@id/btn_manage_notifications"
             app:layout_constraintTop_toTopOf="@id/btn_bell_notifcations" />
 
         <TextView
