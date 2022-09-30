@@ -7,7 +7,7 @@
 
         <variable
             name="viewModelFromLayout"
-            type="com.example.petkeeper.viewmodel.PetsViewModel" />
+            type="com.example.petkeeper.viewmodel.main.PetsViewModel" />
     </data>
 
 

@@ -32,4 +32,7 @@
     <string name="notification_title_hint">NOTIFICATION TITLE</string>
     <string name="choose_notification_date">Pick notification date:</string>
     <string name="choose_notification_time">Pick notification time:</string>
+    <string name="webclient_id">772322758246-o3gtbblethuollompdcbfh3jh5cosaoq.apps.googleusercontent.com</string>
+    <string name="logged_in">Signed in as: </string>
+    <string name="scheduled_notifications">SCHEDULED NOTIFICATIONS</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.petkeeper.ui.fragments.notifications
+package com.example.petkeeper.ui.fragments.menu
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.petkeeper.R
-import com.example.petkeeper.databinding.FragmentDewormingNotificationLayoutBinding
-import com.example.petkeeper.tools.notifications.workmanager.NotificationHelper
+import com.example.petkeeper.databinding.FragmentSettingsBinding
 
-class DewormingNotificationFragment : Fragment() {
+class SettingsFragment : Fragment() {
 
-    private lateinit var binding: FragmentDewormingNotificationLayoutBinding
+    private lateinit var binding: FragmentSettingsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,16 +20,16 @@ class DewormingNotificationFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_vaccine_notification_layout,
+            R.layout.fragment_settings,
             container,
-            false
-        )
+            false)
 
-        with(binding) {
-            lifecycleOwner = this@DewormingNotificationFragment
+        with (binding){
+            lifecycleOwner = this@SettingsFragment
             executePendingBindings()
         }
 
+        // Inflate the layout for this fragment
         return binding.root
     }
 }

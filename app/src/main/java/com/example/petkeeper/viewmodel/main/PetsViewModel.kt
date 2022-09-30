@@ -1,4 +1,4 @@
-package com.example.petkeeper.viewmodel
+package com.example.petkeeper.viewmodel.main
 
 import androidx.lifecycle.*
 import com.example.petkeeper.data.repository.PetsRepository
@@ -6,7 +6,7 @@ import com.example.petkeeper.data.database.room.entity.Pet
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class PetsViewModel(val petsRepository: PetsRepository) : ViewModel() {
+class PetsViewModel(private val petsRepository: PetsRepository) : ViewModel() {
 
     val petsList: LiveData<MutableList<Pet>>? = getAllPets()
 
@@ -14,8 +14,8 @@ class PetsViewModel(val petsRepository: PetsRepository) : ViewModel() {
         petsRepository.insertPet(pet)
     }
 
-    fun deletePet() = viewModelScope.launch(Dispatchers.IO) {
-        petsRepository.deletePet()
+    fun deletePet(pet:Pet) = viewModelScope.launch(Dispatchers.IO) {
+        petsRepository.deletePet(pet)
     }
 
     fun getAllPets() = petsRepository.getAllPets()

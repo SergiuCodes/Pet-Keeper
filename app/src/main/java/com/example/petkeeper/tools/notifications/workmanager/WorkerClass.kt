@@ -5,7 +5,7 @@ import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.example.petkeeper.tools.Constants
 
-class WorkerClass(val context: Context, val workerParams: WorkerParameters) :
+class WorkerClass(val context: Context, workerParams: WorkerParameters) :
     Worker(context, workerParams) {
 
     override fun doWork(): Result {

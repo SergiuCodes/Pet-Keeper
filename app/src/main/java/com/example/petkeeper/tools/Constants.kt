@@ -8,5 +8,9 @@ object Constants {
     const val titleExtra = "titleExtra"
     const val messageExtra = "messageExtra"
     const val ACTION_SET_EXACT_ALARM = "ACTION_SET_EXACT_ALARM"
+    const val REQUEST_CODE_GALLERY = 100
+    const val REQUEST_CODE_CAMERA = 46
+    const val REQUEST_CODE_SIGN_IN = 33
+
 
 }

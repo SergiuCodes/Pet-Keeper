@@ -1,7 +1,6 @@
-package com.example.petkeeper.ui.fragments
+package com.example.petkeeper.ui.fragments.menu
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,17 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.petkeeper.R
 import com.example.petkeeper.data.database.room.PetRoomDatabase
-import com.example.petkeeper.data.database.room.entity.Pet
 import com.example.petkeeper.data.repository.PetsRepository
 import com.example.petkeeper.databinding.PetListFragmentLayoutBinding
-import com.example.petkeeper.tools.AddFragmentListener
+import com.example.petkeeper.ui.fragments.AddPetFragment
 import com.example.petkeeper.ui.pets.adapter.PetsRvAdapter
-import com.example.petkeeper.viewmodel.PetViewModelFactory
-import com.example.petkeeper.viewmodel.PetsViewModel
+import com.example.petkeeper.viewmodel.main.PetViewModelFactory
+import com.example.petkeeper.viewmodel.main.PetsViewModel
 
-private const val REQUEST_CODE = 46
-
-class PetListFragment : Fragment() {
+class MainPetListFragment : Fragment() {
 
     private lateinit var mBinding: PetListFragmentLayoutBinding
     private lateinit var petsViewModel: PetsViewModel
@@ -32,40 +28,36 @@ class PetListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         mBinding =
-            DataBindingUtil.inflate(inflater, R.layout.pet_list_fragment_layout, container, false)
+            DataBindingUtil.inflate(inflater, R.layout.main_pet_list_fragment_layout, container, false)
 
         rvAdapter = PetsRvAdapter(requireContext(), listOf())
         database = PetRoomDatabase(requireContext())
         val repository = PetsRepository(database)
         val factory = PetViewModelFactory(repository)
 
-
         petsViewModel = ViewModelProvider(this, factory)[PetsViewModel::class.java]
 
         with(mBinding) {
-            lifecycleOwner = this@PetListFragment
+            lifecycleOwner = this@MainPetListFragment
             viewModelFromLayout = petsViewModel
             executePendingBindings()
         }
 
         petsViewModel.petsList?.observe(requireActivity()) {
             rvAdapter.petsList = it
-            rvAdapter.notifyDataSetChanged()
         }
 
-        //Adding a new pet into the list
-        mBinding.btnAddPet.setOnClickListener {
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, AddPetFragment(object : AddFragmentListener {
-                    override fun onAddButtonClicked(pet: Pet) {
-                        Log.d("PetListFragment", "After clicked save $pet")
-                        petsViewModel.insertPet(pet)
-                    }
-                })).addToBackStack("PetListFrag").commit()
-        }
+        //Method to add pet
+        addPet()
 
         petsViewModel.getAllPets()
         return mBinding.root
+    }
+
+    private fun addPet() {
+        mBinding.btnAddPet.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.container, AddPetFragment()).addToBackStack("PetListFrag").commit()
+        }
     }
 }
 

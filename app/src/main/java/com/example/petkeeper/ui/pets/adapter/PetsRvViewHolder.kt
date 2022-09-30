@@ -24,7 +24,6 @@ class PetsRvViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
                     activity.supportFragmentManager.beginTransaction().replace(R.id.container, notificationsManagerFragment).addToBackStack(null).commit()
                 }
             })
-
             binding.executePendingBindings()
         }
     }

@@ -1,7 +1,7 @@
 package com.example.petkeeper.data.repository
 
-import com.example.petkeeper.data.database.room.PetRoomDatabase
 import com.example.petkeeper.data.database.room.entity.Pet
+import com.example.petkeeper.data.database.room.PetRoomDatabase
 
 class PetsRepository(private val db: PetRoomDatabase) {
 
@@ -11,7 +11,7 @@ class PetsRepository(private val db: PetRoomDatabase) {
         db.petDao().insertPet(pet)
     }
 
-    suspend fun deletePet(){
-        db.petDao().deletePet()
+    suspend fun deletePet(pet: Pet){
+        db.petDao().deletePet(pet)
     }
 }

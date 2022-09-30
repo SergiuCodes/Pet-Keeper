@@ -4,12 +4,19 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.example.petkeeper.data.database.room.entity.Notification
 import com.example.petkeeper.data.database.room.entity.Pet
+import com.example.petkeeper.data.database.room.notification.NotificationDAO
+import com.example.petkeeper.data.database.room.pet.PetDAO
+import com.example.petkeeper.tools.Converter
 
-@Database(entities = [Pet::class], version = 1, exportSchema = false)
+@Database(entities = [Pet::class, Notification::class], version = 1, exportSchema = false)
+@TypeConverters(Converter::class)
 abstract class PetRoomDatabase : RoomDatabase() {
 
     abstract fun petDao(): PetDAO
+    abstract fun notificationDao(): NotificationDAO
 
     companion object {
         @Volatile

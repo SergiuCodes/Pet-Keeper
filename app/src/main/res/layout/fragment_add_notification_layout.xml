@@ -9,128 +9,97 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:id="@+id/container"
         android:layout_height="match_parent"
         android:background="@color/app_gray"
-        tools:context=".ui.fragments.notifications.AddNotificationFragment">
+        tools:context=".ui.fragments.notifications.MealNotificationFragment">
 
-        <TextView
-            android:id="@+id/tv_notification_fragment_header"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/textfields_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingHorizontal="20dp"
+                app:boxStrokeColor="@color/app_red">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_pet_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nexalight"
+                    android:hint="@string/pet_name_hint" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_notification_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nexalight"
+                        android:hint="@string/notification_title_hint" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/date_buttons_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/textfields_layout"
+            app:layout_constraintStart_toStartOf="@+id/textfields_layout"
+            app:layout_constraintTop_toBottomOf="@id/textfields_layout">
+
+            <TextView
+                android:id="@+id/tv_header_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="17dp"
+                android:fontFamily="@font/nexalight"
+                android:text="@string/choose_notification_date"
+                android:textAllCaps="true"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/btn_datepicker"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/tv_header_date"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/calendar_icon" />
+        </RelativeLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnScheduleNotification"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/app_dark_green"
             android:fontFamily="@font/nexalight"
-            android:text="@string/notification_fragment_type_title"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_pet_species_header_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:fontFamily="sans-serif"
-            android:text="@string/notification_fragment_details"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_notification_fragment_header" />
-
-        <TextView
-            android:id="@+id/tv_pet_species_header_description2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:fontFamily="sans-serif"
-            android:text="@string/notification_fragment_details2"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
-
-        <View
-            android:id="@+id/view"
-            android:layout_width="250dp"
-            android:layout_height="320dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/rectangle_rounded"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_pet_species_header_description" />
-
-        <RelativeLayout
-            android:id="@+id/first_buttons"
-            android:layout_width="310dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toTopOf="@+id/view">
-
-            <ImageView
-                android:id="@+id/btn_meal"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="10dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/iconfood" />
-
-            <ImageView
-                android:id="@+id/btn_medicine"
-                android:layout_width="45dp"
-                android:layout_height="80dp"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="30dp"
-                android:layout_toEndOf="@id/btn_meal"
-                android:clickable="true"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/iconmedicine" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/second_group_buttons"
-            android:layout_width="310dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/first_buttons"
-            app:layout_constraintStart_toStartOf="@+id/first_buttons"
-            app:layout_constraintTop_toBottomOf="@+id/first_buttons">
-
-            <ImageView
-                android:id="@+id/btn_vaccination"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="10dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/iconvaccination" />
-
-            <ImageView
-                android:id="@+id/btn_deworming"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="30dp"
-                android:layout_toEndOf="@id/btn_vaccination"
-                android:clickable="true"
-                android:focusable="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/gallery_icon" />
-
-        </RelativeLayout>
-
+            android:text="Schedule notification"
+            android:textColor="@color/app_yellow"
+            app:layout_constraintEnd_toEndOf="@+id/date_buttons_layout"
+            app:layout_constraintStart_toStartOf="@+id/date_buttons_layout"
+            app:layout_constraintTop_toBottomOf="@+id/date_buttons_layout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

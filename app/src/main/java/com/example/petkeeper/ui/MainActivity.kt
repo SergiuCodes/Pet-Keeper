@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.petkeeper.R
 import com.example.petkeeper.databinding.ActivityMainBinding
-import com.example.petkeeper.ui.fragments.AccountFragment
-import com.example.petkeeper.ui.fragments.PetListFragment
-import com.example.petkeeper.ui.fragments.SettingsFragment
+import com.example.petkeeper.ui.fragments.menu.AccountFragment
+import com.example.petkeeper.ui.fragments.menu.MainPetListFragment
+import com.example.petkeeper.ui.fragments.menu.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,12 +18,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        replaceFragment(PetListFragment())
+        replaceFragment(MainPetListFragment())
 
         binding.navigationBar.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.menu_fragment -> {
-                    replaceFragment(PetListFragment())
+                    replaceFragment(MainPetListFragment())
                 }
                 R.id.settings_fragment -> {
                     replaceFragment(SettingsFragment())
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                     replaceFragment(AccountFragment())
                 }
                 else -> {
-                    PetListFragment()
+                    MainPetListFragment()
                 }
             }
             true

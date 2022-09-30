@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/menu_fragment"
-        android:name="com.example.petkeeper.ui.fragments.PetListFragment"
+        android:name="com.example.petkeeper.ui.fragments.menu.MainPetListFragment"
         android:label="menu_dashboard_fragment"
-        tools:layout="@layout/pet_list_fragment_layout"/>
+        tools:layout="@layout/main_pet_list_fragment_layout"/>
 
     <fragment
         android:id="@+id/settings_fragment"
-        android:name="com.example.petkeeper.ui.fragments.SettingsFragment"
+        android:name="com.example.petkeeper.ui.fragments.menu.SettingsFragment"
         android:label="menu_settings_fragment"
         tools:layout="@layout/fragment_settings"/>
 
     <fragment
         android:id="@+id/account_fragment"
-        android:name="com.example.petkeeper.ui.fragments.AccountFragment"
+        android:name="com.example.petkeeper.ui.fragments.menu.AccountFragment"
         android:label="menu_account_fragment"
         tools:layout="@layout/fragment_account_layout"/>
 
