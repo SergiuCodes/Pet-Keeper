@@ -2,6 +2,9 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
     <gradient
-        android:startColor="@color/rectangular_shape_color"
-        android:type="linear" />
+        android:startColor="@color/app_lavender_medium"
+        android:centerColor="@color/app_lavender_mediumalpha"
+        android:type="linear"
+
+        />
 </shape>

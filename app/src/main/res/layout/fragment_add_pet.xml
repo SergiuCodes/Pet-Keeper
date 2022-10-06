@@ -10,7 +10,7 @@
         android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:backgroundTint="@color/app_gray">
+        android:backgroundTint="@color/app_lavender_dark">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -27,12 +27,13 @@
                 android:fontFamily="@font/nexalight"
                 android:gravity="left"
                 android:hint="@string/pet_name_hint"
-                android:inputType="textVisiblePassword"
-                android:textColor="@color/black"
-                android:textCursorDrawable="@color/app_red"
+                android:inputType="textCapSentences"
+                android:textColor="@color/app_highlight2"
+                android:textColorHint="@color/app_lavender_light"
+                android:textCursorDrawable="@color/app_lime"
                 android:textSize="16sp"
                 android:textStyle="italic"
-                app:backgroundTint="@color/app_dark_green"
+                app:backgroundTint="@color/app_lavender_light"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -46,9 +47,10 @@
                 android:fontFamily="@font/nexalight"
                 android:gravity="start"
                 android:hint="@string/pet_species_hint"
-                android:inputType="textVisiblePassword"
-                android:textColor="@color/black"
-                android:textCursorDrawable="@color/app_red"
+                android:inputType="textCapSentences"
+                android:textColor="@color/app_highlight2"
+                android:textColorHint="@color/app_lavender_light"
+                android:textCursorDrawable="@color/app_lime"
                 android:textSize="16sp"
                 android:textStyle="italic"
                 app:backgroundTint="@color/app_dark_green"
@@ -70,10 +72,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="17dp"
-                    android:fontFamily="@font/nexalight"
+                    android:fontFamily="@font/engebrechtre"
                     android:text="@string/DOB_text"
-                    android:textAllCaps="true"
-                    android:textSize="16sp" />
+                    android:textColor="@color/app_lavender_light"
+                    android:textSize="20sp" />
 
                 <ImageView
                     android:id="@+id/btn_datepicker"
@@ -84,8 +86,11 @@
                     android:layout_toEndOf="@id/tv_dob"
                     android:clickable="true"
                     android:focusable="true"
+                    android:layout_marginTop="5dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/calendar_icon" />
+                    android:src="@drawable/calendar_icon"
+                    app:tint="@color/app_highlight" />
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -102,10 +107,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/nexalight"
+                    android:fontFamily="@font/engebrechtre"
                     android:text="@string/image_buttons_header"
-                    android:textAllCaps="true"
-                    android:textSize="16sp" />
+                    android:textColor="@color/app_lavender_light"
+                    android:textSize="20sp" />
 
                 <ImageView
                     android:id="@+id/btn_launch_camera"
@@ -116,12 +121,14 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:scaleType="fitXY"
-                    android:src="@drawable/camera_icon" />
+                    android:src="@drawable/camera_icon"
+                    app:tint="@color/app_highlight" />
 
                 <ImageView
                     android:id="@+id/btn_open_gallery"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    app:tint="@color/app_highlight"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="6dp"
                     android:layout_toEndOf="@id/btn_launch_camera"
@@ -158,9 +165,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:fontFamily="@font/nexalight"
+                    android:fontFamily="@font/engebrechtre"
                     android:text="@string/save_text"
-                    android:textAllCaps="true"
+                    android:textColor="@color/app_lavender_light"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -172,7 +179,8 @@
                     android:focusable="true"
                     android:scaleType="fitXY"
                     android:src="@drawable/save_icon"
-                    android:text="@string/save_button" />
+                    android:text="@string/save_button"
+                    app:tint="@color/app_lime"/>
 
                 <ImageView
                     android:id="@+id/btn_cancel"
@@ -191,9 +199,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:layout_toEndOf="@id/btn_cancel"
-                    android:fontFamily="@font/nexalight"
+                    android:fontFamily="@font/engebrechtre"
                     android:text="@string/cancel_text"
-                    android:textAllCaps="true"
+                    android:textColor="@color/app_lavender_light"
                     android:textSize="16sp" />
 
 

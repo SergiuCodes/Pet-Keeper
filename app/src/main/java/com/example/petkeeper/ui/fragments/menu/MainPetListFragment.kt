@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.petkeeper.R
 import com.example.petkeeper.data.database.room.PetRoomDatabase
 import com.example.petkeeper.data.repository.PetsRepository
-import com.example.petkeeper.databinding.PetListFragmentLayoutBinding
+import com.example.petkeeper.databinding.MainPetListFragmentLayoutBinding
 import com.example.petkeeper.ui.fragments.AddPetFragment
 import com.example.petkeeper.ui.pets.adapter.PetsRvAdapter
 import com.example.petkeeper.viewmodel.main.PetViewModelFactory
@@ -18,7 +18,7 @@ import com.example.petkeeper.viewmodel.main.PetsViewModel
 
 class MainPetListFragment : Fragment() {
 
-    private lateinit var mBinding: PetListFragmentLayoutBinding
+    private lateinit var mBinding: MainPetListFragmentLayoutBinding
     private lateinit var petsViewModel: PetsViewModel
     private lateinit var database: PetRoomDatabase
     private lateinit var rvAdapter: PetsRvAdapter

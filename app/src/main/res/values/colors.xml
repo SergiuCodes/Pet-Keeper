@@ -14,4 +14,17 @@
     <color name="app_gray">#F0F4F4</color>
     <color name="app_orange">#D9A76A</color>
     <color name="app_red">#D93636</color>
+    <color name="app_red_2">#E62239</color>
+    <color name="app_lavender_medium">#2a2c3c</color>
+    <color name="app_lavender_mediumalpha">#2F2A2C3C</color>
+    <color name="app_lavender_dark">#181821</color>
+    <color name="app_lavender_light">#99A2DC</color>
+    <color name="app_lavender_highlight">#8C74FF</color>
+    <color name="app_highlight">#d793dc</color>
+    <color name="app_highlight2">#d793dc</color>
+    <color name="app_lime">#ace937</color>
+    <color name="app_pink">#ff93b7</color>
+    <color name="text_color">#8a72fe</color>
+    <color name="text_color2">#8670f2</color>
+    <color name="app_bar">#afb3cd</color>
 </resources>

@@ -182,18 +182,4 @@ class AddPetFragment : Fragment() {
             .commit()
         requireActivity().supportFragmentManager.popBackStack()
     }
-
-    private fun uriToBitmap(selectedFileUri: Uri?): Bitmap? {
-        try {
-            val parcelFileDescriptor: ParcelFileDescriptor? =
-                selectedFileUri?.let { requireContext().contentResolver.openFileDescriptor(it, "r") }
-            val fileDescriptor: FileDescriptor = parcelFileDescriptor!!.fileDescriptor
-            val image = BitmapFactory.decodeFileDescriptor(fileDescriptor)
-            parcelFileDescriptor.close()
-            return image
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        return null
-    }
 }
