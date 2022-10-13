@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.petkeeper.viewmodel.notifications.NotificationsViewModelFactory
 
 @Entity(tableName = "pets_table")
 
@@ -13,9 +14,9 @@ data class Pet(
     @ColumnInfo(name = "petSpecies")
     val petSpecies: String,
     @ColumnInfo(name = "petDateOfBirth")
-    val petDateOfBirth: String,
+    var petDateOfBirth: String,
     @ColumnInfo(name = "petImage")
     var petImage: Bitmap,
     @PrimaryKey(autoGenerate = true)
-    var id: Int? = null
+    var petId: Int? = null
 )

@@ -5,5 +5,6 @@
         android:startColor="@color/app_lavender_medium"
         android:centerColor="@color/app_lavender_mediumalpha"
         android:type="linear"
+        android:angle="90"
         />
 </shape>

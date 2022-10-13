@@ -5,6 +5,7 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Matrix
 import android.net.Uri
 import android.os.Bundle
 import android.os.ParcelFileDescriptor
@@ -55,22 +56,17 @@ class AddPetFragment : Fragment() {
             lifecycleOwner = this@AddPetFragment
             executePendingBindings()
         }
-        //Method to open gallery and pick image
+
         openGallery()
-
-        //Method to launch camera and pick image
         launchCamera()
-
-        //Choose birthday method
         birthdayPickerLauncher()
-
-        //Pet insert
         addPet()
 
         //Cancel action -> back to prev. frag.
         binding.btnCancel.setOnClickListener {
             navigateToBackStack()
         }
+
         return binding.root
     }
 

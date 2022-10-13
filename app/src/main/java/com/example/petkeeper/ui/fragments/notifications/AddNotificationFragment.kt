@@ -9,13 +9,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.workDataOf
 import com.example.petkeeper.R
+import com.example.petkeeper.data.database.room.PetRoomDatabase
+import com.example.petkeeper.data.database.room.entity.Notification
+import com.example.petkeeper.data.database.room.entity.Pet
+import com.example.petkeeper.data.repository.NotificationsRepository
 import com.example.petkeeper.databinding.FragmentAddNotificationLayoutBinding
 import com.example.petkeeper.tools.Constants
 import com.example.petkeeper.tools.notifications.workmanager.WorkerClass
+import com.example.petkeeper.viewmodel.notifications.NotificationsViewModel
+import com.example.petkeeper.viewmodel.notifications.NotificationsViewModelFactory
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -29,6 +36,8 @@ class AddNotificationFragment : Fragment() {
     var minutePicked = 0
 
     private lateinit var binding: FragmentAddNotificationLayoutBinding
+    private lateinit var database: PetRoomDatabase
+    private lateinit var notificationsViewModel: NotificationsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +50,12 @@ class AddNotificationFragment : Fragment() {
             container,
             false
         )
+
+        database = PetRoomDatabase(requireContext())
+        val repository = NotificationsRepository(database)
+        val factory = NotificationsViewModelFactory(repository)
+        notificationsViewModel = ViewModelProvider(this, factory)[NotificationsViewModel::class.java]
+
         with(binding) {
             lifecycleOwner = this@AddNotificationFragment
             executePendingBindings()
@@ -123,7 +138,7 @@ class AddNotificationFragment : Fragment() {
 
             WorkManager.getInstance(requireContext()).enqueue(myWorkRequest)
             Toast.makeText(requireContext(), "Notification scheduled for $petName on " + sdf.format(calendar.timeInMillis), Toast.LENGTH_LONG).show()
-
+            notificationsViewModel.insertNotification(Notification(petName,sdf.format(calendar.timeInMillis),1))
             navigateToBackStack()
         }
     }

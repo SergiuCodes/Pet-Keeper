@@ -7,7 +7,6 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.petkeeper.data.database.room.entity.Notification
 import com.example.petkeeper.data.database.room.entity.Pet
-import com.example.petkeeper.data.database.room.notification.NotificationDAO
 import com.example.petkeeper.data.database.room.pet.PetDAO
 import com.example.petkeeper.tools.Converter
 
@@ -16,7 +15,6 @@ import com.example.petkeeper.tools.Converter
 abstract class PetRoomDatabase : RoomDatabase() {
 
     abstract fun petDao(): PetDAO
-    abstract fun notificationDao(): NotificationDAO
 
     companion object {
         @Volatile
