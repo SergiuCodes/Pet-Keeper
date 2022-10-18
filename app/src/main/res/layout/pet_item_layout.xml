@@ -14,14 +14,14 @@
     android:layout_width="match_parent"
     android:layout_height="130dp"
     app:cardBackgroundColor="@android:color/transparent"
-    android:elevation="10dp"
-    app:cardCornerRadius="10dp"
-    android:layout_margin="8dp">
+    android:elevation="15dp"
+    app:cardCornerRadius="3dp"
+    android:layout_margin="3dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/app_lavender_medium">
+        android:background="@drawable/pet_bg">
 
         <ImageView
             android:id="@+id/iv_pet_picture"
@@ -37,11 +37,11 @@
 
         <ImageView
             android:id="@+id/btn_bell_notifcations"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:clickable="true"
             android:focusable="true"
-            android:src="@mipmap/bell_icon_design"
+            android:src="@mipmap/icon_bell"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
@@ -49,26 +49,24 @@
 
         <ImageView
             android:id="@+id/btn_manage_notifications"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="5dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:clickable="true"
             android:focusable="true"
             android:scaleType="fitXY"
-            android:src="@mipmap/pet_details_icon_design"
+            android:src="@mipmap/icon_notes"
             app:layout_constraintBottom_toBottomOf="@id/btn_bell_notifcations"
             app:layout_constraintStart_toEndOf="@id/btn_bell_notifcations"
             app:layout_constraintTop_toTopOf="@id/btn_bell_notifcations" />
 
         <ImageView
             android:id="@+id/btn_delete_pet"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="5dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:clickable="true"
             android:focusable="true"
             android:scaleType="fitXY"
-            android:src="@mipmap/delete_design_icon"
+            android:src="@mipmap/icon_delete"
             app:layout_constraintBottom_toBottomOf="@id/btn_bell_notifcations"
             app:layout_constraintStart_toEndOf="@id/btn_manage_notifications"
             app:layout_constraintTop_toTopOf="@id/btn_bell_notifcations" />
@@ -78,10 +76,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/engebrechtre"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:fontFamily="@font/opensansregular"
             android:text="@string/pet_name"
-            android:textColor="@color/white"
+            android:textColor="@color/text_color3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_bell_notifcations" />
 
@@ -89,24 +88,25 @@
             android:id="@+id/tv_pet_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/playball"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/poppinsregular"
             android:text="@{pet.petName}"
             android:textColor="@color/text_color2"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@id/tv_pet_name_header"
+            android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@id/tv_pet_name_header"
             app:layout_constraintTop_toTopOf="@id/tv_pet_name_header" />
 
 
         <TextView
             android:id="@+id/tv_pet_species_header"
+            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:fontFamily="@font/engebrechtre"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:fontFamily="@font/opensansregular"
             android:text="@string/pet_species"
-            android:textColor="@color/white"
+            android:textColor="@color/text_color3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_pet_name_header" />
 
@@ -114,39 +114,39 @@
             android:id="@+id/tv_pet_species"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/playball"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/poppinsregular"
             android:text="@{pet.petSpecies}"
             android:textColor="@color/text_color2"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@id/tv_pet_species_header"
+            android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@id/tv_pet_species_header"
             app:layout_constraintTop_toTopOf="@id/tv_pet_species_header" />
 
         <TextView
-            android:id="@+id/tv_pet_age_header"
+            android:id="@+id/tv_pet_birth_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:fontFamily="@font/engebrechtre"
-            android:text="@string/age"
-            android:textColor="@color/white"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/opensansregular"
+            android:text="@string/birth"
+            android:textSize="15sp"
+            android:textColor="@color/text_color3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_pet_species_header" />
 
         <TextView
-            android:id="@+id/tv_pet_age"
+            android:id="@+id/tv_pet_birth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/playball"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/poppinsregular"
             android:text="@{pet.petDateOfBirth}"
             android:textColor="@color/text_color2"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:layout_marginTop="2dp"
-            app:layout_constraintBottom_toBottomOf="@id/tv_pet_age_header"
-            app:layout_constraintStart_toEndOf="@id/tv_pet_age_header"
-            app:layout_constraintTop_toTopOf="@id/tv_pet_age_header" />
+            app:layout_constraintStart_toEndOf="@id/tv_pet_birth_header"
+            app:layout_constraintTop_toTopOf="@id/tv_pet_birth_header" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

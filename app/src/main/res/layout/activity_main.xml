@@ -10,15 +10,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.MainActivity">
+        tools:context=".ui.MainActivity"
+        android:background="@drawable/bg_new">
 
         <FrameLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/app_lavender_dark">
-
-
+            android:layout_height="match_parent">
         </FrameLayout>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView

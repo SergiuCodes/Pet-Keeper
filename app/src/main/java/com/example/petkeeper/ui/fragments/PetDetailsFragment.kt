@@ -34,7 +34,6 @@ class PetDetailsFragment : Fragment() {
             lifecycleOwner = this@PetDetailsFragment
             executePendingBindings()
         }
-        val intent: Intent = Intent()
 
         rvAdapter = PetsRvAdapter(requireContext())
         val bundle: Bundle? = this.arguments
@@ -45,16 +44,16 @@ class PetDetailsFragment : Fragment() {
             arguments?.getParcelable<Bitmap>("petbitmap")
 
         binding.tvPetName.text = petNameString
-        binding.tvPetAgeHeader.text = petAgeString
+        binding.tvPetBirth.text = petAgeString
         binding.tvPetSpecies.text = petSpecies
         binding.petImage.setImageBitmap(petBitmap)
 
-        rvAdapter.setOnItemClickListener {
-            binding.tvPetAge.text = it.petDateOfBirth
-            binding.tvPetName.text = it.petName
-            binding.tvPetSpecies.text = it.petSpecies
-            binding.petImage.setImageBitmap(it.petImage)
-        }
+//        rvAdapter.setOnItemClickListener {
+//            binding.tvPetBirth.text = it.petDateOfBirth
+//            binding.tvPetName.text = it.petName
+//            binding.tvPetSpecies.text = it.petSpecies
+//            binding.petImage.setImageBitmap(it.petImage)
+//        }
 
         return binding.root
     }

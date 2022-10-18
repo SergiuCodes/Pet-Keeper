@@ -51,7 +51,9 @@ class AddNotificationFragment : Fragment() {
             false
         )
 
+        val bundle: Bundle? = this.arguments
         database = PetRoomDatabase(requireContext())
+
         val repository = NotificationsRepository(database)
         val factory = NotificationsViewModelFactory(repository)
         notificationsViewModel = ViewModelProvider(this, factory)[NotificationsViewModel::class.java]
@@ -65,6 +67,9 @@ class AddNotificationFragment : Fragment() {
         openScheduler()
         //Confirm notification scheduled
         scheduleNotification()
+
+        val petNameFromPetClicked: String? = bundle?.getString("petNameSaved")
+        binding.tvPetName.text = petNameFromPetClicked
 
         return binding.root
     }
@@ -123,22 +128,21 @@ class AddNotificationFragment : Fragment() {
             val today = Calendar.getInstance()
             val differenceInTime = (calendar.timeInMillis/1000L) - (today.timeInMillis/1000L)
 
-            val petName = binding.etPetName.text.toString()
             val notificationTitle = binding.etNotificationTitle.text.toString()
 
             val myWorkRequest = OneTimeWorkRequestBuilder<WorkerClass>()
                 .setInitialDelay(differenceInTime, TimeUnit.SECONDS)
                 .setInputData(
                     workDataOf(
-                        Constants.titleExtra to petName,
+                        Constants.titleExtra to binding.tvPetName,
                         Constants.messageExtra to notificationTitle
                     )
                 )
                 .build()
 
             WorkManager.getInstance(requireContext()).enqueue(myWorkRequest)
-            Toast.makeText(requireContext(), "Notification scheduled for $petName on " + sdf.format(calendar.timeInMillis), Toast.LENGTH_LONG).show()
-            notificationsViewModel.insertNotification(Notification(petName,sdf.format(calendar.timeInMillis),1))
+            Toast.makeText(requireContext(), "Notification scheduled for ${binding.tvPetName} on " + sdf.format(calendar.timeInMillis), Toast.LENGTH_LONG).show()
+            notificationsViewModel.insertNotification(Notification(binding.tvPetName.toString(),sdf.format(calendar.timeInMillis),1))
             navigateToBackStack()
         }
     }

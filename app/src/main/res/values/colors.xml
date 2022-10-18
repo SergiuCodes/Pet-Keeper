@@ -25,6 +25,7 @@
     <color name="app_lime">#ace937</color>
     <color name="app_pink">#ff93b7</color>
     <color name="text_color">#8a72fe</color>
+    <color name="text_color3">#AFB4CC</color>
     <color name="text_color2">#8670f2</color>
     <color name="app_bar">#afb3cd</color>
 </resources>

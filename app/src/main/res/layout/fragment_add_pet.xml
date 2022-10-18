@@ -24,15 +24,14 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:ems="10"
-                android:fontFamily="@font/nexalight"
+                android:fontFamily="@font/opensansregular"
                 android:gravity="left"
                 android:hint="@string/pet_name_hint"
                 android:inputType="textCapSentences"
-                android:textColor="@color/app_highlight2"
-                android:textColorHint="@color/app_lavender_light"
+                android:textColor="@color/text_color2"
+                android:textColorHint="@color/text_color3"
                 android:textCursorDrawable="@color/app_lime"
-                android:textSize="16sp"
-                android:textStyle="italic"
+                android:textSize="15sp"
                 app:backgroundTint="@color/app_lavender_light"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -44,97 +43,137 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:ems="10"
-                android:fontFamily="@font/nexalight"
+                android:fontFamily="@font/opensansregular"
                 android:gravity="start"
                 android:hint="@string/pet_species_hint"
                 android:inputType="textCapSentences"
-                android:textColor="@color/app_highlight2"
-                android:textColorHint="@color/app_lavender_light"
+                android:textColor="@color/text_color2"
+                android:textColorHint="@color/text_color3"
                 android:textCursorDrawable="@color/app_lime"
-                android:textSize="16sp"
-                android:textStyle="italic"
+                android:textSize="15sp"
                 app:backgroundTint="@color/app_dark_green"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/et_pet_name" />
 
-            <RelativeLayout
-                android:id="@+id/date_buttons_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="10dp"
+            <ImageView
+                android:id="@+id/btn_datepicker"
+                android:layout_width="170dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/app_dark_green"
+                android:fontFamily="@font/nexalight"
+                android:scaleType="fitXY"
+                android:src="@drawable/label_square_bg"
+                android:textColor="@color/app_yellow"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_pet_species">
+                app:layout_constraintTop_toBottomOf="@id/et_pet_species" />
 
-                <TextView
-                    android:id="@+id/tv_dob"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="17dp"
-                    android:fontFamily="@font/engebrechtre"
-                    android:text="@string/DOB_text"
-                    android:textColor="@color/app_lavender_light"
-                    android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/datepicker_icon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/tv_dob"
+                android:scaleType="fitXY"
+                android:src="@mipmap/icon_calendar"
+                app:layout_constraintBottom_toBottomOf="@id/btn_datepicker"
+                app:layout_constraintStart_toStartOf="@id/btn_datepicker"
+                app:layout_constraintTop_toTopOf="@id/btn_datepicker" />
 
-                <ImageView
-                    android:id="@+id/btn_datepicker"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_centerInParent="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_toEndOf="@id/tv_dob"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:layout_marginTop="5dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/calendar_icon"
-                    app:tint="@color/app_highlight" />
+            <TextView
+                android:id="@+id/tv_dob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsregular"
+                android:text="@string/DOB_text"
+                android:textColor="@color/text_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@id/btn_datepicker"
+                app:layout_constraintEnd_toEndOf="@id/btn_datepicker"
+                app:layout_constraintStart_toStartOf="@id/btn_datepicker"
+                app:layout_constraintTop_toTopOf="@id/btn_datepicker" />
 
-            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/image_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/opensansregular"
+                android:text="@string/image_buttons_header"
+                android:textColor="@color/app_lavender_light"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/datepicker_icon" />
 
             <RelativeLayout
-                android:id="@+id/image_buttons_layout"
-                android:layout_width="match_parent"
+                android:id="@+id/picture_buttons_layout"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                app:layout_constraintEnd_toEndOf="@+id/date_buttons_layout"
-                app:layout_constraintStart_toStartOf="@+id/date_buttons_layout"
-                app:layout_constraintTop_toBottomOf="@+id/date_buttons_layout">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_header">
 
-                <TextView
-                    android:id="@+id/image_header"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/engebrechtre"
-                    android:text="@string/image_buttons_header"
-                    android:textColor="@color/app_lavender_light"
-                    android:textSize="20sp" />
 
                 <ImageView
                     android:id="@+id/btn_launch_camera"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_toEndOf="@id/image_header"
-                    android:clickable="true"
-                    android:focusable="true"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/app_dark_green"
                     android:scaleType="fitXY"
-                    android:src="@drawable/camera_icon"
-                    app:tint="@color/app_highlight" />
+                    android:src="@drawable/label_square_bg" />
+
+                <ImageView
+                    android:id="@+id/camera_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/icon_cameranew" />
+
+                <TextView
+                    android:id="@+id/camera_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/camera_launch_text"
+                    android:layout_toEndOf="@id/camera_icon"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/text_color"
+                    android:textSize="13sp" />
 
                 <ImageView
                     android:id="@+id/btn_open_gallery"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_toEndOf="@id/btn_launch_camera"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/label_square_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/btn_launch_camera"
+                    app:layout_constraintStart_toEndOf="@id/btn_launch_camera"
+                    app:layout_constraintTop_toTopOf="@id/btn_launch_camera" />
+
+                <ImageView
+                    android:id="@+id/gallery_icon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    app:tint="@color/app_highlight"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_toEndOf="@id/btn_launch_camera"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:src="@drawable/gallery_icon" />
+                    android:layout_alignStart="@id/btn_open_gallery"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/icon_bell" />
+
+                <TextView
+                    android:id="@+id/gallery_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="@string/gallery_launch_text"
+                    android:layout_toEndOf="@id/gallery_icon"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/text_color"
+                    android:textSize="13sp" />
 
             </RelativeLayout>
 
@@ -142,14 +181,14 @@
                 android:id="@+id/pet_image"
                 android:layout_width="300dp"
                 android:layout_height="200dp"
-                android:layout_marginStart="3dp"
+                android:layout_marginTop="5dp"
                 android:elevation="10dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_launcher_foreground"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/image_buttons_layout" />
+                app:layout_constraintTop_toBottomOf="@id/picture_buttons_layout" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -164,45 +203,44 @@
                     android:id="@+id/tv_save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:fontFamily="@font/engebrechtre"
+                    android:layout_marginTop="18dp"
+                    android:fontFamily="@font/poppinsregular"
                     android:text="@string/save_text"
-                    android:textColor="@color/app_lavender_light"
-                    android:textSize="16sp" />
+                    android:textColor="@color/text_color3"
+                    android:textSize="15sp" />
 
                 <ImageView
                     android:id="@+id/btn_save"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_toEndOf="@id/tv_save"
                     android:clickable="true"
                     android:focusable="true"
                     android:scaleType="fitXY"
-                    android:src="@drawable/save_icon"
-                    android:text="@string/save_button"
-                    app:tint="@color/app_lime"/>
+                    android:src="@mipmap/icon_save"
+                    android:text="@string/save_button" />
 
                 <ImageView
                     android:id="@+id/btn_cancel"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginStart="10dp"
                     android:layout_toEndOf="@id/btn_save"
                     android:clickable="true"
                     android:focusable="true"
-                    android:src="@drawable/cancel_icon"
+                    android:src="@mipmap/icon_cancelnew"
                     android:text="@string/btn_cancel" />
 
                 <TextView
                     android:id="@+id/tv_cancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="18dp"
                     android:layout_toEndOf="@id/btn_cancel"
-                    android:fontFamily="@font/engebrechtre"
+                    android:fontFamily="@font/poppinsregular"
                     android:text="@string/cancel_text"
-                    android:textColor="@color/app_lavender_light"
-                    android:textSize="16sp" />
+                    android:textColor="@color/text_color3"
+                    android:textSize="15sp" />
 
 
             </RelativeLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pet Keeper</string>
+    <string name="app_name">PetKeeper</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="settings_fragment">YOU ARE NOW IN THE SETTINGS TAB</string>
@@ -7,7 +7,7 @@
     <string name="pet_image">pet image</string>
     <string name="pet_name">Name:</string>
     <string name="pet_species">Species:</string>
-    <string name="age">Age:</string>
+    <string name="birth">Birth:</string>
     <string name="sometext">Sometext</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_dashboard">Dashboard</string>
@@ -18,7 +18,7 @@
     <string name="save_button">SAVE</string>
     <string name="btn_cancel">Cancel</string>
     <string name="datepicker">DatePicker</string>
-    <string name="DOB_text">Choose birth date:</string>
+    <string name="DOB_text">Birth Date</string>
     <string name="notification_date_header">Choose schedule for the notification</string>
     <string name="notification_title_header">Give your notification a title</string>
     <string name="notification_message_header">Give your notification a message</string>
@@ -29,10 +29,14 @@
     <string name="save_text">Save</string>
     <string name="notification_fragment_type_title">Notifications type</string>
     <string name="cancel_text">Cancel</string>
-    <string name="notification_title_hint">NOTIFICATION TITLE</string>
-    <string name="choose_notification_date">Pick notification date:</string>
+    <string name="notification_title_hint">Notification title</string>
+    <string name="choose_notification_date">Date</string>
     <string name="choose_notification_time">Pick notification time:</string>
     <string name="webclient_id">772322758246-o3gtbblethuollompdcbfh3jh5cosaoq.apps.googleusercontent.com</string>
     <string name="logged_in">Signed in as: </string>
     <string name="scheduled_notifications">SCHEDULED NOTIFICATIONS</string>
+    <string name="notification_add_petname_header">Adding notification for </string>
+    <string name="schedule_button_text">Schedule</string>
+    <string name="camera_launch_text">Camera</string>
+    <string name="gallery_launch_text">Gallery</string>
 </resources>

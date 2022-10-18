@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.petkeeper.R
 import com.example.petkeeper.data.database.room.entity.Pet
 import com.example.petkeeper.ui.fragments.PetDetailsFragment
+import com.example.petkeeper.ui.fragments.notifications.AddNotificationFragment
 
 class PetsRvAdapter(private val context: Context, var petsList: List<Pet> = ArrayList()) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -42,23 +43,22 @@ class PetsRvAdapter(private val context: Context, var petsList: List<Pet> = Arra
         val pet = petsList[position]
         (holder as PetsRvViewHolder).bind(pet)
 
-
-
         holder.itemView.rootView.setOnClickListener {
 
-            val bundle: Bundle = Bundle()
-            bundle.putString("petage", pet.petDateOfBirth)
-            bundle.putString("petname", pet.petName)
-            bundle.putString("petspecies", pet.petSpecies)
-            bundle.putParcelable("petbitmap", pet.petImage)
+            val bundleForDetailsFragment: Bundle = Bundle()
+            bundleForDetailsFragment.putString("petage", pet.petDateOfBirth)
+            bundleForDetailsFragment.putString("petname", pet.petName)
+            bundleForDetailsFragment.putString("petspecies", pet.petSpecies)
+            bundleForDetailsFragment.putParcelable("petbitmap", pet.petImage)
 
             onItemClickListener?.let {
                 it(pet)
             }
             val activity = context as AppCompatActivity
-            val notificationsManagerFragment = PetDetailsFragment()
-            notificationsManagerFragment.arguments = bundle
-            activity.supportFragmentManager.beginTransaction().replace(R.id.container, notificationsManagerFragment).addToBackStack(null).commit()
+            val petDetailsFragment = PetDetailsFragment()
+
+            petDetailsFragment.arguments = bundleForDetailsFragment
+            activity.supportFragmentManager.beginTransaction().replace(R.id.container, petDetailsFragment).addToBackStack(null).commit()
         }
     }
 

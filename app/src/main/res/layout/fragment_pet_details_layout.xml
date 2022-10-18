@@ -10,121 +10,137 @@
             type="com.example.petkeeper.data.database.room.entity.Pet" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/app_lavender_dark"
-        tools:context=".ui.fragments.PetDetailsFragment">
+        android:fillViewport="true">
 
-        <ImageView
-            android:id="@+id/pet_image"
-            android:foreground="@drawable/gradient_imageview_vertical"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:elevation="10dp"
-            android:scaleType="fitXY"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent"
+            android:background="@color/app_lavender_dark"
+            tools:context=".ui.fragments.PetDetailsFragment">
 
-        <TextView
-            android:id="@+id/tv_pet_name_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="sans-serif-condensed-light"
-            android:text="@string/pet_name"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pet_image" />
+            <ImageView
+                android:id="@+id/pet_image"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:elevation="10dp"
+                android:foreground="@drawable/gradient_imageview_vertical"
+                android:scaleType="fitXY"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_pet_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:fontFamily="sans-serif-condensed-light"
-            android:text="@{pet.petName}"
-            android:textColor="@color/text_color2"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@id/tv_pet_name_header"
-            app:layout_constraintStart_toEndOf="@id/tv_pet_name_header"
-            app:layout_constraintTop_toTopOf="@id/tv_pet_name_header" />
+            <TextView
+                android:id="@+id/tv_pet_name_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/opensansregular"
+                android:text="@string/pet_name"
+                android:textColor="@color/text_color3"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pet_image" />
 
-        <TextView
-            android:id="@+id/tv_pet_species_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/pet_species"
-            android:fontFamily="sans-serif-condensed-light"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/tv_pet_name_header"
-            app:layout_constraintTop_toBottomOf="@+id/tv_pet_name_header" />
+            <TextView
+                android:id="@+id/tv_pet_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="@{pet.petName}"
+                android:textColor="@color/text_color2"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/tv_pet_name_header"
+                app:layout_constraintTop_toTopOf="@id/tv_pet_name_header" />
 
-        <TextView
-            android:id="@+id/tv_pet_species"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:fontFamily="sans-serif-condensed-light"
-            android:text="@{pet.petSpecies}"
-            android:textColor="@color/app_highlight2"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@id/tv_pet_species_header"
-            app:layout_constraintStart_toEndOf="@id/tv_pet_species_header"
-            app:layout_constraintTop_toTopOf="@id/tv_pet_species_header" />
+            <TextView
+                android:id="@+id/tv_pet_species_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/opensansregular"
+                android:text="@string/pet_species"
+                android:textColor="@color/text_color3"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/tv_pet_name_header"
+                app:layout_constraintTop_toBottomOf="@+id/tv_pet_name_header" />
 
-        <TextView
-            android:id="@+id/tv_pet_age_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/age"
-            android:fontFamily="sans-serif-condensed-light"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/tv_pet_species_header"
-            app:layout_constraintTop_toBottomOf="@+id/tv_pet_species_header" />
+            <TextView
+                android:id="@+id/tv_pet_species"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="@{pet.petSpecies}"
+                android:textColor="@color/text_color2"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/tv_pet_species_header"
+                app:layout_constraintTop_toTopOf="@id/tv_pet_species_header" />
 
-        <TextView
-            android:id="@+id/tv_pet_age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:fontFamily="sans-serif-condensed-light"
-            android:text="@{pet.petDateOfBirth}"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@id/tv_pet_age_header"
-            app:layout_constraintStart_toEndOf="@id/tv_pet_age_header"
-            app:layout_constraintTop_toTopOf="@id/tv_pet_age_header" />
+            <TextView
+                android:id="@+id/tv_pet_birth_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/opensansregular"
+                android:text="@string/birth"
+                android:textColor="@color/text_color3"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/tv_pet_species_header"
+                app:layout_constraintTop_toBottomOf="@+id/tv_pet_species_header" />
 
-        <TextView
-            android:id="@+id/tv_pet_notifications_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="sans-serif-condensed-light"
-            android:text="@string/scheduled_notifications"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tv_pet_age_header"
-            app:layout_constraintTop_toBottomOf="@+id/tv_pet_age_header" />
+            <TextView
+                android:id="@+id/tv_pet_birth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="@{pet.petDateOfBirth}"
+                android:textColor="@color/text_color2"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/tv_pet_birth_header"
+                app:layout_constraintTop_toTopOf="@id/tv_pet_birth_header" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/notifications_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_pet_notifications_header" />
+            <ImageView
+                android:id="@+id/line_thin2"
+                android:layout_width="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintTop_toBottomOf="@id/tv_pet_birth"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/line_thin" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tv_pet_notifications_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunitosansregular"
+                android:text="@string/scheduled_notifications"
+                android:textColor="@color/text_color3"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_pet_birth_header"
+                app:layout_constraintTop_toBottomOf="@+id/line_thin2" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/notifications_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_pet_notifications_header" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
 </layout>

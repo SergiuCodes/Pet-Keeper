@@ -31,5 +31,5 @@ interface PetDAO {
     //Relationship db Dao methods
     @Transaction
     @Query("SELECT * FROM pets_table where petId = :petId")
-    fun getPetWithNotifications(petId: Int): LiveData<MutableList<PetWithNotifications>>?
+    fun getPetWithNotificationsById(petId: Int): LiveData<MutableList<PetWithNotifications>>?
 }

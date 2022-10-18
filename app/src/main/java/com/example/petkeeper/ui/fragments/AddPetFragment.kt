@@ -154,6 +154,7 @@ class AddPetFragment : Fragment() {
     //Method to insert pet in the db after chosen details
     private fun addPet() {
         binding.btnSave.setOnClickListener {
+
             val petName = binding.etPetName.text.toString()
             val petSpecies = binding.etPetSpecies.text.toString()
             val petDateOfBirth = binding.tvDob.text.toString()

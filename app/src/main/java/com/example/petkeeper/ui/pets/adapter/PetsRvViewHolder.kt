@@ -1,5 +1,6 @@
 package com.example.petkeeper.ui.pets.adapter
 
+import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -20,8 +21,13 @@ class PetsRvViewHolder(private val view: View) :
 
             binding.btnManageNotifications.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(view: View?) {
+
+                    val bundleForNotificationAddFragment: Bundle = Bundle()
+                    bundleForNotificationAddFragment.putString("petNameSaved", pet.petName)
+
                     val activity = view!!.context as AppCompatActivity
                     val notificationsManagerFragment = AddNotificationFragment()
+                    notificationsManagerFragment.arguments = bundleForNotificationAddFragment
                     activity.supportFragmentManager.beginTransaction()
                         .replace(R.id.container, notificationsManagerFragment).addToBackStack(null)
                         .commit()

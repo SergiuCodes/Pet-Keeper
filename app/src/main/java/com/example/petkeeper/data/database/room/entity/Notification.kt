@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "notifications_table")
 data class Notification(
-    var name: String,
+    var name: String?,
     var scheduledDate: String,
     var petId: Int,
 

@@ -10,7 +10,6 @@ class PetsRepository(private val db: PetRoomDatabase) {
     suspend fun insertPet(pet: Pet) {
         db.petDao().insertPet(pet)
     }
-
     suspend fun deletePet(pet: Pet){
         db.petDao().deletePet(pet)
     }

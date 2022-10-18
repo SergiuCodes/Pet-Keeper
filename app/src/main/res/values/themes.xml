@@ -5,7 +5,7 @@
     </style>
 
     <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.DatePicker">
-        <item name="android:headerBackground">@color/app_orange</item>
+        <item name="android:headerBackground">@color/text_color</item>
     </style>
     <!-- Base application theme. -->
     <style name="Theme.PetKeeper" parent="Theme.MaterialComponents.DayNight.NoActionBar">

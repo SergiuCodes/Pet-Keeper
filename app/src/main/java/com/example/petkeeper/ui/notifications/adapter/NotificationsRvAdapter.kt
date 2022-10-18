@@ -14,6 +14,11 @@ class NotificationsRvAdapter(private val context: Context, var notificationsList
 
     private lateinit var mRowBinding: ViewDataBinding
 
+    fun submitList(list: List<Notification>) {
+        notificationsList = list
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotificationViewHolder {
         mRowBinding = DataBindingUtil.inflate(
             LayoutInflater.from(context),
