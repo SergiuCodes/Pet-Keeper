@@ -5,10 +5,8 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Matrix
 import android.net.Uri
 import android.os.Bundle
-import android.os.ParcelFileDescriptor
 import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
@@ -25,8 +23,6 @@ import com.example.petkeeper.databinding.FragmentAddPetBinding
 import com.example.petkeeper.tools.Constants
 import com.example.petkeeper.viewmodel.addpetscreen.AddPetViewModel
 import com.example.petkeeper.viewmodel.addpetscreen.AddPetViewModelFactory
-import java.io.FileDescriptor
-import java.io.IOException
 import java.io.InputStream
 import java.text.SimpleDateFormat
 import java.util.*
@@ -44,7 +40,7 @@ class AddPetFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_pet, container, false)
 
         database = PetRoomDatabase(requireContext())

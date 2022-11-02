@@ -32,7 +32,7 @@
                 android:textColorHint="@color/text_color3"
                 android:textCursorDrawable="@color/app_lime"
                 android:textSize="15sp"
-                app:backgroundTint="@color/app_lavender_light"
+                app:backgroundTint="@color/text_color3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +51,7 @@
                 android:textColorHint="@color/text_color3"
                 android:textCursorDrawable="@color/app_lime"
                 android:textSize="15sp"
-                app:backgroundTint="@color/app_dark_green"
+                app:backgroundTint="@color/text_color3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/et_pet_name" />
@@ -95,7 +95,6 @@
                 app:layout_constraintStart_toStartOf="@id/btn_datepicker"
                 app:layout_constraintTop_toTopOf="@id/btn_datepicker" />
 
-
             <TextView
                 android:id="@+id/image_header"
                 android:layout_width="wrap_content"
@@ -112,11 +111,11 @@
             <RelativeLayout
                 android:id="@+id/picture_buttons_layout"
                 android:layout_width="wrap_content"
+                android:layout_marginTop="5dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/image_header">
-
 
                 <ImageView
                     android:id="@+id/btn_launch_camera"
@@ -201,6 +200,7 @@
 
                 <TextView
                     android:id="@+id/tv_save"
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
@@ -224,15 +224,16 @@
                     android:id="@+id/btn_cancel"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="5dp"
                     android:layout_toEndOf="@id/btn_save"
                     android:clickable="true"
                     android:focusable="true"
-                    android:src="@mipmap/icon_cancelnew"
+                    android:src="@mipmap/icon_cancel_red"
                     android:text="@string/btn_cancel" />
 
                 <TextView
                     android:id="@+id/tv_cancel"
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
@@ -242,9 +243,7 @@
                     android:textColor="@color/text_color3"
                     android:textSize="15sp" />
 
-
             </RelativeLayout>
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

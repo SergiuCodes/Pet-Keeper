@@ -4,7 +4,6 @@ import android.graphics.Bitmap
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.petkeeper.viewmodel.notifications.NotificationsViewModelFactory
 
 @Entity(tableName = "pets_table")
 

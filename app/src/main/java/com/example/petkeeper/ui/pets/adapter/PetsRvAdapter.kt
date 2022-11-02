@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.petkeeper.R
 import com.example.petkeeper.data.database.room.entity.Pet
 import com.example.petkeeper.ui.fragments.PetDetailsFragment
-import com.example.petkeeper.ui.fragments.notifications.AddNotificationFragment
 
 class PetsRvAdapter(private val context: Context, var petsList: List<Pet> = ArrayList()) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -22,10 +21,6 @@ class PetsRvAdapter(private val context: Context, var petsList: List<Pet> = Arra
     fun submitPetsList(nList: List<Pet>) {
         petsList = nList
         notifyDataSetChanged()
-    }
-
-    fun setOnItemClickListener(listener: (Pet) -> Unit) {
-        onItemClickListener = listener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -45,7 +40,7 @@ class PetsRvAdapter(private val context: Context, var petsList: List<Pet> = Arra
 
         holder.itemView.rootView.setOnClickListener {
 
-            val bundleForDetailsFragment: Bundle = Bundle()
+            val bundleForDetailsFragment = Bundle()
             bundleForDetailsFragment.putString("petage", pet.petDateOfBirth)
             bundleForDetailsFragment.putString("petname", pet.petName)
             bundleForDetailsFragment.putString("petspecies", pet.petSpecies)

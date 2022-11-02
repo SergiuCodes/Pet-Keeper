@@ -8,9 +8,8 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petkeeper.R
 import com.example.petkeeper.data.database.room.entity.Notification
-import com.example.petkeeper.data.database.room.entity.Pet
 
-class NotificationsRvAdapter(private val context: Context, var notificationsList: List<Notification> = ArrayList()): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class NotificationsRvAdapter(private val context: Context, private var notificationsList: List<Notification> = ArrayList()): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private lateinit var mRowBinding: ViewDataBinding
 
